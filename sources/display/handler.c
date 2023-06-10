@@ -74,28 +74,6 @@ void	update_player(t_data *data)
 	if (new_x >= 0 && new_x <= data->map.width && new_y >= 0 && new_y
 		<= data->map.height)
 	{
-		// is_wall = (int)(data->player.pos.y + SCREEN_DIST * \
-		// data->player.dir.x * data->player.move.x);
-		// printf("%d\n", is_wall);
-		// if (data->player.move.x > 1 && data->map.array[(int)data->player.pos.y][is_wall])
-		// {
-		// 	dy = SPEED * data->player.dir.x * data->player.move.x;
-		// 	data->player.pos.y += dy;
-		// }
-		// else if (data->player.move.x < 1)
-		// {
-
-		// }
-		// if (data->player.move.y > 1)
-		// {
-
-		// }
-		// else if (data->player.move.x < 1)
-		// {
-
-		// }
-		// data->player.pos.x = new_x;
-		// data->player.pos.y = new_y;
 		is_wall = (int)(data->player.pos.x + -SCREEN_DIST * \
 		data->player.dir.y * data->player.move.x);
 		int tmp = data->map.array[(int)(data->player.pos.y)][is_wall];

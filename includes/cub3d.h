@@ -53,7 +53,7 @@
 
 # define WIN_W 1400
 # define WIN_H 1000
-# define R 0.03f
+# define R 0.04f
 # define SCREEN_DIST 0.5f 
 # define SPEED 0.2f
 
@@ -134,5 +134,7 @@ char		*ft_strstr(const char *big, const char *little);
 int			ft_strncmp(const char *s1, const char *s2, size_t length);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strcpy(char *dest, const char *src);
+
+int         close_win(t_data *data);
 
 #endif

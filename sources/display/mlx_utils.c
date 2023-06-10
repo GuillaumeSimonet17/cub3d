@@ -38,7 +38,7 @@ int	loop_hook(t_data *data)
 	return (0);
 }
 
-int	closes(t_data *data)
+int	close_win(t_data *data)
 {
 	mlx_destroy_image(data->win.mlx, data->win.img);
 	exit(0);
@@ -55,7 +55,7 @@ void	display_game(t_data *data)
 			&(data->win.line_length), &(data->win.endian));
 	mlx_hook(data->win.mlx_win, 2, (1L << 0), handle_keypress, data);
 	mlx_hook(data->win.mlx_win, 3, (1L << 1), handle_keyrelease, data);
-	mlx_hook(data->win.mlx_win, CLOSERED, (1L << 1), closes, data);
+	mlx_hook(data->win.mlx_win, CLOSERED, (1L << 1), close_win, data);
 	mlx_loop_hook(data->win.mlx, loop_hook, data);
 	mlx_loop(data->win.mlx);
 }

@@ -12,6 +12,23 @@
 
 #include "../../includes/cub3d.h"
 
+int	to_much_digit(char *line)
+{
+	size_t i = 0;
+	int l = 0;
+
+	while (i < ft_strlen(line))
+	{
+		if (line[i] != ' ' && line[i] != '	')
+			l++;
+		i++;
+	}
+	if (l - 1 > 11)
+		return 1;
+	return 0;
+}
+
+
 static void	parse_rgb_values(char *line, uint8_t rgb_values[3], t_data *data)
 {
 	char		*start;
@@ -20,6 +37,12 @@ static void	parse_rgb_values(char *line, uint8_t rgb_values[3], t_data *data)
 
 	index = 0;
 	start = line;
+	if (to_much_digit(line))
+	{
+		ft_free(data->garbage);
+		write(2, "Error\nToo much digit for color in file\n", 39);
+		exit (1);
+	}
 	while (index < 3)
 	{
 		end = ft_strchr(start, ',');
