@@ -29,3 +29,10 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s + i);
 	return (NULL);
 }
+
+int	is_equal(char c, char c2)
+{
+	if (c2 == c)
+		return (1);
+	return (0);
+}

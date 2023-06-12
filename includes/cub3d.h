@@ -136,5 +136,6 @@ char		*ft_strchr(const char *s, int c);
 char		*ft_strcpy(char *dest, const char *src);
 
 int         close_win(t_data *data);
+int         is_equal(char c, char c2);
 
 #endif

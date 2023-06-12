@@ -14,9 +14,11 @@
 
 int	to_much_digit(char *line)
 {
-	size_t i = 0;
-	int l = 0;
+	size_t	i;
+	int		l;
 
+	i = 0;
+	l = 0;
 	while (i < ft_strlen(line))
 	{
 		if (line[i] != ' ' && line[i] != '	')
@@ -24,10 +26,9 @@ int	to_much_digit(char *line)
 		i++;
 	}
 	if (l - 1 > 11)
-		return 1;
-	return 0;
+		return (1);
+	return (0);
 }
-
 
 static void	parse_rgb_values(char *line, uint8_t rgb_values[3], t_data *data)
 {
