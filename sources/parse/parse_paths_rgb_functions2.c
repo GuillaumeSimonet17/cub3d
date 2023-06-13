@@ -95,13 +95,13 @@ bool	get_file_paths_rgb(t_data *data, char *argv)
 	if (close(file_descriptor) < 0)
 		return (perror("close file descriptor"), false);
 	if (!paths_rgb_are_filled(data))
-		return (printf("ERR_PATH_RGB_FILE"), false);
+		return (printf("Error\nPath RGB file value\n"), false);
 	if (paths_rgb_duplicate(data))
-		return (printf("ERR_PATH_RGB_DUP"), false);
+		return (printf("Error\nPath RGB file duplicate\n"), false);
 	if (!textures_are_valid(data))
-		return (printf("ERR_TEXT_FILE"), false);
+		return (printf("Error\nTexture invalid\n"), false);
 	if (data->map.before_params)
-		return (printf("ERR_MAP_BEFORE_PARAMS"), false);
+		return (printf("Error\nMap before params\n"), false);
 	data->params.celling_color = rgb_to_int(data->params.celling_rgb);
 	data->params.floor_color = rgb_to_int(data->params.floor_rgb);
 	return (true);

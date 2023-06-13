@@ -58,15 +58,15 @@ bool	cube_parser(t_data *data, char *argv)
 	if (!get_size_of_map(data, argv))
 		return (false);
 	if (!data->map.width || !data->map.height)
-		return (printf("ERR_MAP_EMPTY"), false);
+		return (printf("Error\nMap empty\n"), false);
 	if (data->map.num_of_player > 1 || !data->map.num_of_player)
-		return (printf("ERR_MAP_MULTI"), false);
+		return (printf("Error\nMap multi player\n"), false);
 	if (!malloc_map_visited(data))
 		return (false);
 	if (!fill_map_array(data, argv))
 		return (false);
 	if (!map_unclosed(data, (int)data->player.pos.x, \
 	(int)data->player.pos.y, data->map.visited))
-		return (printf("ERR_MAP_UNCLOSED"), false);
+		return (printf("Error\nMap unclosed\n"), false);
 	return (true);
 }

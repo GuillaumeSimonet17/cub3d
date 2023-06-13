@@ -64,7 +64,7 @@ static bool	process_map_line(t_data *data, char *line)
 			|| line[index] == 'E' || line[index] == 'W')
 			data->map.num_of_player++;
 		else
-			return (printf("ERR_MAP_CHAR"), false);
+			return (printf("Error\nCharactere invalid\n"), false);
 	}
 	return (true);
 }
@@ -83,7 +83,7 @@ bool	check_value_of_map(t_data *data, char *line, int file_descriptor)
 	while (line != NULL)
 	{
 		if (line[0] != '\n')
-			return (printf("ERR_MAP_SPLIT"), false);
+			return (printf("Error\nMap split\n"), false);
 		line = get_next_line(data, file_descriptor);
 	}
 	return (true);
