@@ -1,4 +1,6 @@
 # cube
+School 42 Project.
+
 Project to be launched on Linux
 
 This project is inspired by Wolfenstein 3D. Wolfenstein 3D is considered the world's first FPS (first-person shooter).
